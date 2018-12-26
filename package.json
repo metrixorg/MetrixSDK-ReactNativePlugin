@@ -1,0 +1,33 @@
+{
+  "name": "react-native-metrix",
+  "version": "0.0.1",
+  "description": "Metrix React native plugin.",
+  "files": [
+    "android",
+    "src",
+    "view",
+    "package.json",
+    "README.md"
+  ],
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Metrix",
+  "license": "Apache 2.0",
+  "dependencies": {
+    "prop-types": "^15.5.10"
+  },
+  "keywords": [
+    "metrix",
+    "analytics"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/metrixorg/MetrixSDK-ReactNativePlugin.git"
+  }, 
+  "bugs": {
+    "url": "https://github.com/metrixorg/MetrixSDK-ReactNativePlugin/issues"
+  },
+  "homepage": "https://github.com/metrixorg/MetrixSDK-ReactNativePlugin#readme"
+}
