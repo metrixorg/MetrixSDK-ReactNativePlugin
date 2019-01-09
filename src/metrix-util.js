@@ -42,8 +42,13 @@ if (Platform.OS === "android") {
 		setFlushEventsOnClose: function(flushEventsOnClose) {
 			Metrix.setFlushEventsOnClose(flushEventsOnClose);
 		},
-		newEvent: function(eventName) {
+		newEvent: function(eventName, customAttributes, customMetrics) {
+				if (customAttributes && customMetrics) {
+				Metrix.newEventCustom(eventName,customAttributes,customMetrics);
+			}
+			else{	
 			Metrix.newEvent(eventName);
+			}
 		},
 		newBusinessEvent: function(itemType, itemId, cartType, transactionNum, amount) {
 			Metrix.newBusinessEvent(itemType, itemId, cartType, transactionNum, amount);
@@ -68,6 +73,12 @@ if (Platform.OS === "android") {
 		},
 		isScreenFlowsAutoFill: function(callback) {
 			Metrix.isScreenFlowsAutoFill(callback);
+		},
+		setUserMetrics: function(userMetrics){
+			Metrix.setUserMetrics(userMetrics);
+		},
+		addUserAttributes: function(userAttributes){
+			Metrix.addUserAttributes(userAttributes);
 		}
 	};
 }

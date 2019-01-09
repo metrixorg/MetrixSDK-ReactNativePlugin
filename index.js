@@ -22,5 +22,7 @@ module.exports = {
 	isOptedOut: MetrixUtil.isOptedOut,
 	setDefaultTracker: MetrixUtil.setDefaultTracker,
 	getSessionNum: MetrixUtil.getSessionNum,
-	isScreenFlowsAutoFill: MetrixUtil.isScreenFlowsAutoFill
+	isScreenFlowsAutoFill: MetrixUtil.isScreenFlowsAutoFill,
+	addUserAttributes: MetrixUtil.addUserAttributes,
+	setUserMetrics: MetrixUtil.setUserMetrics
 };
