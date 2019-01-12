@@ -2,7 +2,7 @@
 
 
 
-## MetrixSDK React Native Doc
+## MetrixSDK React Native Doc [![npm version](https://badge.fury.io/js/%40metrixorg%2Freact-native-metrix.svg)](https://badge.fury.io/js/%40metrixorg%2Freact-native-metrix)
 <div dir="rtl">
 
 <h2>فهرست</h2>
