@@ -24,5 +24,6 @@ module.exports = {
 	getSessionNum: MetrixUtil.getSessionNum,
 	isScreenFlowsAutoFill: MetrixUtil.isScreenFlowsAutoFill,
 	addUserAttributes: MetrixUtil.addUserAttributes,
-	setUserMetrics: MetrixUtil.setUserMetrics
+	setUserMetrics: MetrixUtil.setUserMetrics,
+	setOnAttributionChangedListener:MetrixUtil.setOnAttributionChangedListener
 };

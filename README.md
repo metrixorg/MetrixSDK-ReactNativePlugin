@@ -1,7 +1,5 @@
 
 
-
-
 ## MetrixSDK React Native Doc [![npm version](https://badge.fury.io/js/%40metrixorg%2Freact-native-metrix.svg)](https://badge.fury.io/js/%40metrixorg%2Freact-native-metrix)
 <div dir="rtl">
 
@@ -27,7 +25,8 @@
 <a style="padding-right:2em" href=#setUserAttributes>۳.۱۵. مشخص کردن Attribute‌های پیش‌فرض همه‌ی رویدادها</a><br>
 <a style="padding-right:2em" href=#setUserMetrics>۳.۱۶. مشخص کردن Metricsهای پیش‌فرض همه‌ی رویدادها</a><br>
 <a style="padding-right:2em" href=#setScreenFlowsAutoFill>۳.۱۷. نگهداری حرکات کاربر در صفحات مختلف در اپلیکیشن</a><br>
-<a style="padding-right:2em" href=#setDefaultTracker>۳.۱۸. مشخص کردن Pre-installed Tracker</a><br>
+<a style="padding-right:2em" href=#setAttributionListener>۳.۱۸. دریافت اطلاعات کمپین</a><br>
+<a style="padding-right:2em" href=#setDefaultTracker>۳.۱۹. مشخص کردن Pre-installed Tracker</a><br>
 
 
 
@@ -277,7 +276,41 @@
     Metrix.screenDisplayed("First Screen");
 </div>
 
-<h3 id=setDefaultTracker>۱۸. مشخص کردن Pre-installed Tracker</h3>
+  
+<h3 id=setAttributionListener>۱۸. دریافت اطلاعات کمپین</h3>  
+  
+با مقداردهی این تابعه میتوانید اطلاعات کمپین تبلیغاتی که در ترکر خود در پنل قرار داده اید را دریافت کنید.<br>  
+<div dir=ltr>  
+  
+    Metrix.setOnAttributionChangedListener(
+        (attributionModel)=>{
+              //TODO
+        });
+  
+</div>  
+  
+مدل `attributionModel` اطلاعات زیر را در اختیار شما قرار میدهد.  
+  
+`attributionModel.acquisitionAd` : نام تبلیغ  
+  
+`attributionModel.acquisitionAdSet`: گروه تبلیغاتی  
+  
+`attributionModel.acquisitionCampaign`: کمپین تبلیغاتی  
+  
+`attributionModel.acquisitionSource`: شبکه تبلیغاتی  
+  
+`attributionModel.attributionStatus`: وضعیت کاربر در کمپین را  
+مشخص میکند و فقط چهار مقدار زیر را برمیگرداند  
+  
+۱- `ATTRIBUTED` اتربیوت شده  
+  
+۲- `NOT_ATTRIBUTED_YET` هنوز اتربیوت نشده  
+  
+۳- `ATTRIBUTION_NOT_NEEDED` نیاز به اتربیوت ندارد  
+  
+۴- `UNKNOWN` حالت ناشناخته
+
+<h3 id=setDefaultTracker>۱۹. مشخص کردن Pre-installed Tracker</h3>
 
 با استفاده از این تابع می‌توانید با استفاده از یک `trackerToken` که از پنل آن را دریافت می‌کنید، برای همه‌ی رویدادها یک `tracker` پیش‌فرض را قرار دهید:<br>
 <div dir=ltr>

@@ -79,6 +79,9 @@ if (Platform.OS === "android") {
 		},
 		addUserAttributes: function(userAttributes){
 			Metrix.addUserAttributes(userAttributes);
+		},
+		setOnAttributionChangedListener: function(callback){
+			Metrix.setOnAttributionChangedListener(callback);
 		}
 	};
 }
