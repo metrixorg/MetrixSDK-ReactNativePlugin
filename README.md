@@ -42,7 +42,18 @@
     react-native link @metrixorg/react-native-metrix
 </div>
 
-۲. برای کتابخانه `Metrix` لازم است تا دسترسی‌های زیر را به فایل `AndroidManifest.xml` اضافه کنید:  
+۲. آپشن زیر را به بلاک `android` فایل `android/app/build.gradle` اپلیکیشن خود اضافه کنید:
+
+<div dir="ltr">
+
+    compileOptions {
+        targetCompatibility = "8"
+        sourceCompatibility = "8"
+    }
+</div>
+
+
+۳. برای کتابخانه `Metrix` لازم است تا دسترسی‌های زیر را به فایل `AndroidManifest.xml` اضافه کنید:  
 
 <div dir=ltr>
 
