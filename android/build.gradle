@@ -7,8 +7,8 @@ android {
     defaultConfig {
         minSdkVersion 16
         targetSdkVersion 28
-        versionCode 5
-        versionName "0.0.5"
+        versionCode 6
+        versionName "0.0.6"
     }
 
     buildTypes {
@@ -23,8 +23,8 @@ dependencies {
     implementation 'com.facebook.react:react-native:+'
     implementation files('libs/metrix.jar')
     implementation 'com.google.code.gson:gson:2.8.5'
-    implementation 'com.squareup.retrofit2:retrofit:2.4.0'
-    implementation 'com.squareup.retrofit2:converter-gson:2.4.0'
-    implementation 'com.squareup.okhttp3:logging-interceptor:3.10.0'
-    implementation 'com.squareup.retrofit2:converter-scalars:2.1.0'
+    implementation 'com.squareup.retrofit2:retrofit:2.5.0'
+    implementation 'com.squareup.retrofit2:converter-gson:2.5.0'
+    implementation 'com.squareup.okhttp3:logging-interceptor:3.13.1'
+    implementation 'com.squareup.retrofit2:converter-scalars:2.5.0'
 }
