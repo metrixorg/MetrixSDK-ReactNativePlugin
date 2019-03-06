@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
-VERSION_NAME="0.0.6"
-VERSION_CODE=6
+VERSION_NAME="0.0.7"
+VERSION_CODE=7
 sed -i '' 's/\"version\".*/\"version\" :\"'"${VERSION_NAME}"'\",/' package.json &
 sed -i '' 's/Metrix.initialize.*/Metrix.initialize(appKey, \"'"${VERSION_NAME}"'\");/' ./src/metrix-util.js &
 sed -i '' 's/versionCode.*/versionCode '"${VERSION_CODE}"'/' ./android/build.gradle &
