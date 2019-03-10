@@ -23,7 +23,7 @@
 <a style="padding-right:2em" href=#getSessionNum>۳.۱۳. شماره نشست جاری</a><br>
 <a style="padding-right:2em" href=#newEvent>۳.۱۴. رویداد سفارشی</a><br>
 <a style="padding-right:2em" href=#setUserAttributes>۳.۱۵. مشخص کردن Attribute‌های پیش‌فرض همه‌ی رویدادها</a><br>
-<a style="padding-right:2em" href=#setUserMetrics>۳.۱۶. مشخص کردن Metricsهای پیش‌فرض همه‌ی رویدادها</a><br>
+<a style="padding-right:2em" href=#setUserMetrics>۳.۱۶. مشخص کردن Metric‌های پیش‌فرض همه‌ی رویدادها</a><br>
 <a style="padding-right:2em" href=#setScreenFlowsAutoFill>۳.۱۷. نگهداری حرکات کاربر در صفحات مختلف در اپلیکیشن</a><br>
 <a style="padding-right:2em" href=#setAttributionListener>۳.۱۸. دریافت اطلاعات کمپین</a><br>
 <a style="padding-right:2em" href=#setDefaultTracker>۳.۱۹. مشخص کردن Pre-installed Tracker</a><br>
@@ -42,7 +42,7 @@
     react-native link @metrixorg/react-native-metrix
 </div>
 
-۲. آپشن زیر را به بلاک `android` فایل `android/app/build.gradle` اپلیکیشن خود اضافه کنید:
+۲. آپشن زیر را به قسمت `android` فایل `android/app/build.gradle` اپلیکیشن خود اضافه کنید:
 
 <div dir="ltr">
 
@@ -268,7 +268,7 @@
     Metrix.setUserAttributes(attributes);
 </div>
 
-<h3 id=setUserMetrics>۱۶. مشخص کردن Metricsهای پیش‌فرض همه‌ی رویدادها</h3>
+<h3 id=setUserMetrics>۱۶. مشخص کردن Metric‌های پیش‌فرض همه‌ی رویدادها</h3>
 
 با استفاده از این تابع می‌توانید به تعداد دلخواه `Metric` به همه‌ی رویدادهای خود اضافه کنید:<br>
 <div dir=ltr>
