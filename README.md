@@ -82,14 +82,14 @@
 
 <div dir=ltr>
 
-    Metrix.initialize("Your metrix app key");
+    Metrix.initialize("app id");
 
 </div>
 
 
 <img src="https://storage.backtory.com/metricx/images/init.png"/>
 
-`your metrix app key`: کلید اپلیکیشن شما که از پنل متریکس آن را دریافت می‌کنید.
+`APP_ID`: کلید اپلیکیشن شما که از پنل متریکس آن را دریافت می‌کنید.
 <h2 id=methods>امکانات کتابخانه متریکس</h2>
 
 <h3 id=session_event_description>۱. توضیح مفاهیم رویداد (event) و نشست (session)</h3>
