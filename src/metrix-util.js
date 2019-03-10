@@ -4,7 +4,7 @@ import { Platform } from "react-native";
 if (Platform.OS === "android") {
 	module.exports = {
 		initialize: function(appKey) {
-			Metrix.initialize(appKey, "0.8.2");
+			Metrix.initialize(appKey, "0.8.3");
 		},
 		enableLocationListening: function() {
 			Metrix.enableLocationListening();
@@ -27,17 +27,11 @@ if (Platform.OS === "android") {
 		setSessionTimeoutMillis: function(sessionTimeoutMillis) {
 			Metrix.setSessionTimeoutMillis(sessionTimeoutMillis);
 		},
-		setOptOut: function(optOut) {
-			Metrix.setOptOut(optOut);
-		},
 		enableLogging: function(enableLogging) {
 			Metrix.enableLogging(enableLogging);
 		},
 		setLogLevel: function(logLevel) {
 			Metrix.setLogLevel(logLevel);
-		},
-		setOffline: function(offline) {
-			Metrix.setOffline(offline);
 		},
 		setFlushEventsOnClose: function(flushEventsOnClose) {
 			Metrix.setFlushEventsOnClose(flushEventsOnClose);
