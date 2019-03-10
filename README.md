@@ -1,5 +1,4 @@
 
-
 ## MetrixSDK React Native Doc [![npm version](https://badge.fury.io/js/%40metrixorg%2Freact-native-metrix.svg)](https://badge.fury.io/js/%40metrixorg%2Freact-native-metrix)
 <div dir="rtl">
 
@@ -79,7 +78,7 @@
 </div>
 
 ۳. سپس برای مقداردهی اولیه ، تابع زیر را با ورودی کلید اپ خود صدا بزنید.
-
+توجه نمایید که حتما داخل متد `constructor` کامپوننت اصلی پروژه خود متد زیر را صدا بزنید.
 <div dir=ltr>
 
     Metrix.initialize("app id");
