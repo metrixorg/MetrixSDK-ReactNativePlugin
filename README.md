@@ -369,7 +369,7 @@
     var attributes = {};
     attributes["manufacturer"] = "Nike";
 
-    Metrix.setUserAttributes(attributes);
+    Metrix.addUserAttributes(attributes);
 </div>
 
 <h3 id=setUserMetrics>۱۴. مشخص کردن Metric‌های پیش‌فرض همه‌ی رویدادها</h3>
