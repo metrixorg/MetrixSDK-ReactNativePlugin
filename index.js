@@ -9,7 +9,6 @@ module.exports = {
 	setEventMaxCount: MetrixUtil.setEventMaxCount,
 	setEventUploadPeriodMillis: MetrixUtil.setEventUploadPeriodMillis,
 	setSessionTimeoutMillis: MetrixUtil.setSessionTimeoutMillis,
-	setOptOut: MetrixUtil.setOptOut,
 	enableLogging: MetrixUtil.enableLogging,
 	setLogLevel: MetrixUtil.setLogLevel,
 	setFlushEventsOnClose: MetrixUtil.setFlushEventsOnClose,

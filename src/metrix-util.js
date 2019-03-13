@@ -4,7 +4,7 @@ import { Platform } from "react-native";
 if (Platform.OS === "android") {
 	module.exports = {
 		initialize: function(appKey) {
-			Metrix.initialize(appKey, "0.8.3");
+			Metrix.initialize(appKey, "0.8.4");
 		},
 		enableLocationListening: function() {
 			Metrix.enableLocationListening();
@@ -55,9 +55,6 @@ if (Platform.OS === "android") {
 		},
 		setMetrixApiKey: function(newApiKey) {
 			Metrix.setMetrixApiKey(newApiKey);
-		},
-		isOptedOut: function(trackerToken) {
-			Metrix.isOptedOut(trackerToken);
 		},
 		setDefaultTracker: function(callback) {
 			Metrix.setDefaultTracker(callback);
