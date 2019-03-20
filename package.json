@@ -2,13 +2,6 @@
   "name": "@metrixorg/react-native-metrix",
   "version" :"0.8.5",
   "description": "Metrix React native plugin.",
-  "files": [
-    "android",
-    "src",
-    "view",
-    "package.json",
-    "README.md"
-  ],
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"

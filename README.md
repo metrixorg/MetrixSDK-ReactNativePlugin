@@ -1,4 +1,3 @@
-
 ## MetrixSDK React Native Doc [![npm version](https://badge.fury.io/js/%40metrixorg%2Freact-native-metrix.svg)](https://badge.fury.io/js/%40metrixorg%2Freact-native-metrix)
 <div dir="rtl">
 
@@ -130,7 +129,8 @@
 </div>
 
 (دو permission دوم اختیاری است)  
-
+ <h2> IOS</h2>
+  برای پیاده سازی sdk برای سیستم عامل iOS میتوانید از <a href="[https://github.com/metrixorg/MetrixSDK-iOS](https://github.com/metrixorg/MetrixSDK-iOS)">اینجا</a> کمک بگیرید همچنین در صورت نیاز به اطلاعات بیشتر با پشتیبانی تماس بگیرید
 <h2 id=install_referrer>۲. دریافت اطلاعات Install Referrer</h2>
 
 برای افزایش دقت تشخیص اتریبیوشن نصب‌های اپلیکیشن شما، متریکس نیازمند اطلاعاتی درباره `referrer` نصب اپلیکیشن است. این اطلاعات می‌تواند از طریق سرویس ارائه شده توسط کتابخانه **Google Play Referrer API** و یا دریافت **Google Play Store intent** با استفاده از یک **broadcast receiver** به دست آید.

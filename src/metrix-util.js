@@ -75,4 +75,11 @@ if (Platform.OS === "android") {
 			Metrix.setOnAttributionChangedListener(callback);
 		}
 	};
+} else if (Platform.OS === "ios") {
+	module.exports = {
+		initialize: function(appKey) {
+			Metrix.initialize(appKey);
+		}
+	};
 }
+
