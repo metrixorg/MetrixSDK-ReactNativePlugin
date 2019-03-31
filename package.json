@@ -1,6 +1,6 @@
 {
   "name": "@metrixorg/react-native-metrix",
-  "version" :"0.8.5",
+  "version" :"0.8.6",
   "description": "Metrix React native plugin.",
   "main": "index.js",
   "scripts": {

@@ -58,3 +58,5 @@
 
 #gms
 -keep class com.google.android.gms.** { *; }
+
+-dontwarn android.content.pm.PackageInfo
