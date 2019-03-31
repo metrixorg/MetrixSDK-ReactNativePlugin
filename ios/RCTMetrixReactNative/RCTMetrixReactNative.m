@@ -20,6 +20,18 @@ RCT_EXPORT_METHOD(initialize : (NSString *)appKey) {
     [Metrix appDidLaunch:metrixConfig];
 }
 
+RCT_EXPORT_METHOD(newEventCustom : (NSString *)slug  attributes:(NSDictionary *)myAttributes metrics:(NSDictionary *)myMetrics) {
+    
+    MXCustomEvent *event = [MXCustomEvent newEvent:slug attributes:myAttributes metrics:myMetrics];
+    [Metrix trackCustomEvent:event];
+}
+
+
+RCT_EXPORT_METHOD(newEvent : (NSString *)slug) {
+    
+    [self newEventCustom:slug attributes:nil metrics:nil];
+}
+
 
 @end
 
