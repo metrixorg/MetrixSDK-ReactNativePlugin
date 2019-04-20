@@ -44,8 +44,24 @@ if (Platform.OS === "android") {
 			Metrix.newEvent(eventName);
 			}
 		},
-		newBusinessEvent: function(itemType, itemId, cartType, transactionNum, amount) {
-			Metrix.newBusinessEvent(itemType, itemId, cartType, transactionNum, amount);
+		newRevenue: function(slug, revenue, currency, orderId) {
+			let cr = null;
+			if (currency === 0) { 
+				cr = "IRR";
+			} else if(currency === 1) {
+				cr = "USD";
+			} else if (currency == 2) {
+				cr = "EUR";
+			}
+			if (cr == null && orderId == null) {
+				Metrix.newRevenueSimple(slug, revenue);
+			} else if(cr == null && orderId != null) {
+				Metrix.newRevenueOrderId(slug, revenue, orderId);
+			} else if (orderId == null) { 
+				Metrix.newRevenueCurrency(slug, revenue, cr);
+			} else {
+				Metrix.newRevenueFull(slug, revenue, cr, orderId);
+			}
 		},
 		screenDisplayed: function(screenName) {
 			Metrix.screenDisplayed(screenName);
