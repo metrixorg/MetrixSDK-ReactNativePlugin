@@ -42,6 +42,7 @@
 توجه: برای راه اندازی در iOS نیاز است فایل MetrixSdk.framework را در Embedded Binaries پروژه iOS اضافه کنید.
 
 
+
 ۲. آپشن زیر را به قسمت `android` فایل `android/app/build.gradle` اپلیکیشن خود اضافه کنید:
 
 <div dir="ltr">
