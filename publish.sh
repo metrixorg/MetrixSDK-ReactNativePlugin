@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-VERSION_NAME="0.8.6"
+VERSION_NAME="0.8.7"
 VERSION_CODE=12
 sed -i '' 's/\"version\".*/\"version\" :\"'"${VERSION_NAME}"'\",/' package.json &
 sed -i '' 's/Metrix.initialize.*/Metrix.initialize(appKey, \"'"${VERSION_NAME}"'\");/' ./src/metrix-util.js &
