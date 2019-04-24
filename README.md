@@ -58,7 +58,7 @@
 
 #### Android
 
-۴. برای کتابخانه `Metrix` لازم است تا دسترسی‌های زیر را به فایل `AndroidManifest.xml` اضافه کنید:  
+۱. برای کتابخانه `Metrix` لازم است تا دسترسی‌های زیر را به فایل `AndroidManifest.xml` اضافه کنید:  
 
 <div dir=ltr>
 
