@@ -39,7 +39,8 @@
 
     react-native link @metrixorg/react-native-metrix
 </div>
-### نصب به صورت دستی
+
+<h2> نصب به صورت دستی</h2>
 
 
 #### iOS
