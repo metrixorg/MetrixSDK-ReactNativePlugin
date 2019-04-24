@@ -45,9 +45,13 @@
 #### iOS
 
 ۱. در XCode در قسمت `project navigator` روی `Libraries` راست کلید نمایید سپس `Add files to [your project's name]` را کلیک کنید.
+
 ۲. به `node_modules` رفته و فایل `@metrixorg/react-native-metrix/ios/RCTMetrixReactNative.xcodeproj` را اضافه کنید.
+
 ۳. فایل `node_modules/@metrixorg/react-native-metrix/ios/MetrixSdk.framework` را در `[your projct's path]/ios` کپی کنید.
+
 ۴. در قسمت `project navigatior` پروژه خود را انتخاب کنید در تب `Build Phases` بخش `Link Binary with Libraries` باید `libRCTMetrixReactNative.a` و ` add other ➜ [your projct's path]/MetrixSdk.framewrok` اضافه نمایید.
+
 ۵. در تب `General` ➜ `Embeded Binaries` ➜ `+` باید فایل `MetrixSdk.framework` را اضافه نماید.
 
 
