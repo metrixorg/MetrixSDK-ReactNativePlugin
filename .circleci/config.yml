@@ -21,17 +21,17 @@ jobs:
               androidCode=$(cat version | grep "androidCode=" | cut -d'"' -f2)
               androidVersion=$(cat version | grep "androidVersion=" | cut -d'"' -f2)
               npmVersion=$(cat version | grep "npmVersion=" | cut -d'"' -f2)
-              sed -i  '/version/c\ \"version\" :\"$npmVersion\",' package.json
-              sed -i  '/Metrix.initialize./c\ Metrix.initialize(appKey, \"$npmVersion\");' ./src/metrix-util.js
-              sed -i  '/versionCode/c\ versionCode $androidCode' ./android/build.gradle 
-              sed -i  '/versionName/c\ versionName \"$androidVersion\"' ./android/build.gradle 
+              sed -i  "/version/c\ \"version\" :\"$npmVersion\"," package.json
+              sed -i  "/Metrix.initialize./c\ Metrix.initialize(appKey, \"$npmVersion\");" ./src/metrix-util.js
+              sed -i  "/versionCode/c\ versionCode $androidCode" ./android/build.gradle 
+              sed -i  "/versionName/c\ versionName \"$androidVersion\"" ./android/build.gradle 
               newLine="   implementation 'ir.metrix:reactnative:$bintrayVersion'"
               sed -i "/ir.metrix:reactnative/c\ $newLine" ./android/build.gradle
       - run:
             name: push github
             command: |
               git add --all 
-              git config --local user.name "metrixir"
+              git config --local user.name "metrixCI"
               git config --local user.email "admin@metrix.ir"
               git commit -m "v$npmVersion" 
               git push origin master -f 
