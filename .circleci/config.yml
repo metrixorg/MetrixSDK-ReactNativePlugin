@@ -27,9 +27,6 @@ jobs:
               sed -i  "/versionName/c\ versionName \"$androidVersion\"" ./android/build.gradle 
               newLine="   implementation 'ir.metrix:reactnative:$bintrayVersion'"
               sed -i "/ir.metrix:reactnative/c\ $newLine" ./android/build.gradle
-      - run:
-            name: push github
-            command: |
               git add --all 
               git config --local user.name "metrixCI"
               git config --local user.email "admin@metrix.ir"
