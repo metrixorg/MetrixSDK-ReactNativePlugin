@@ -29,10 +29,10 @@ jobs:
               sed -i "/ir.metrix:reactnative/c\ $newLine" ./android/build.gradle
 
               git add --all 
-              git commit -m "v${VERSION_NAME}" 
+              git commit -m "v$npmVersion" 
               git push origin master -f 
-              git tag v${VERSION_NAME} 
-              git push origin v${VERSION_NAME} 
+              git tag v$npmVersion
+              git push origin v$npmVersion 
               
 
 
