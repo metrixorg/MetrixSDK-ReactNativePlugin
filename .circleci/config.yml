@@ -17,10 +17,10 @@ jobs:
       - run:
             name: publish package
             command: |
-              bintrayVersion=$(cat version | grep "var bintrayVersion=" | cut -d'"' -f2)
-              androidCode=$(cat version | grep "var androidCode=" | cut -d'"' -f2)
-              androidVersion=$(cat version | grep "var androidVersion=" | cut -d'"' -f2)
-              npmVersion=$(cat version | grep "var npmVersion=" | cut -d'"' -f2)
+              bintrayVersion=$(cat version | grep "bintrayVersion=" | cut -d'"' -f2)
+              androidCode=$(cat version | grep "androidCode=" | cut -d'"' -f2)
+              androidVersion=$(cat version | grep "androidVersion=" | cut -d'"' -f2)
+              npmVersion=$(cat version | grep "npmVersion=" | cut -d'"' -f2)
               sed -i '' 's/\"version\".*/\"version\" :\"'"$npmVersion"'\",/' package.json
               sed -i '' 's/Metrix.initialize.*/Metrix.initialize(appKey, \"'"$npmVersion"'\");/' ./src/metrix-util.js
               sed -i '' 's/versionCode.*/versionCode '"$androidCode"'/' ./android/build.gradle 
