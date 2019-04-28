@@ -1,4 +1,4 @@
-version: 1
+version: 2
 defaults: &defaults
   docker:
     - image: metrixorg/gitlab-ci-android:v1.0.0
