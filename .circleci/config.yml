@@ -1,0 +1,53 @@
+version: 1
+defaults: &defaults
+  docker:
+    - image: metrixorg/gitlab-ci-android:v1.0.0
+
+jobs:
+
+  npmPublish:
+    <<: *defaults
+
+    steps:
+      - checkout
+      - run: npm install
+      - run:
+            name: Authenticate with registry
+            command: echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" > ~/.npmrc
+      - run:
+            name: publish package
+            command: |
+              bintrayVersion=$(cat version | grep "var bintrayVersion=" | cut -d'"' -f2)
+              androidCode=$(cat version | grep "var androidCode=" | cut -d'"' -f2)
+              androidVersion=$(cat version | grep "var androidVersion=" | cut -d'"' -f2)
+              npmVersion=$(cat version | grep "var npmVersion=" | cut -d'"' -f2)
+              sed -i '' 's/\"version\".*/\"version\" :\"'"$npmVersion"'\",/' package.json
+              sed -i '' 's/Metrix.initialize.*/Metrix.initialize(appKey, \"'"$npmVersion"'\");/' ./src/metrix-util.js
+              sed -i '' 's/versionCode.*/versionCode '"$androidCode"'/' ./android/build.gradle 
+              sed -i '' 's/versionName.*/versionName \"'"$androidVersion"'\"/' ./android/build.gradle 
+              newLine="   implementation 'ir.metrix:reactnative:$bintrayVersion'"
+              sed -i "/ir.metrix:reactnative/c\ $newLine" ./android/build.gradle
+
+              git add --all 
+              git commit -m "v${VERSION_NAME}" 
+              git push origin master -f 
+              git tag v${VERSION_NAME} 
+              git push origin v${VERSION_NAME} 
+              
+
+
+
+
+
+
+
+workflows:
+  version: 2
+  publish:
+    jobs:
+      - hold:
+          type: approval
+
+      - npmPublish:
+          requires:
+            - hold
