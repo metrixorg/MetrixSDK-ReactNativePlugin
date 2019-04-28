@@ -27,7 +27,7 @@ jobs:
               sed -i '' 's/versionName.*/versionName \"'"$androidVersion"'\"/' ./android/build.gradle 
               newLine="   implementation 'ir.metrix:reactnative:$bintrayVersion'"
               sed -i "/ir.metrix:reactnative/c\ $newLine" ./android/build.gradle
-      -run:
+      - run:
             name: push github
             command: |
               git add --all 
