@@ -15,7 +15,7 @@ jobs:
             name: Authenticate with registry
             command: echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" > ~/.npmrc
       - run:
-            name: publish package
+            name: change files
             command: |
               bintrayVersion=$(cat version | grep "bintrayVersion=" | cut -d'"' -f2)
               androidCode=$(cat version | grep "androidCode=" | cut -d'"' -f2)
@@ -27,7 +27,9 @@ jobs:
               sed -i '' 's/versionName.*/versionName \"'"$androidVersion"'\"/' ./android/build.gradle 
               newLine="   implementation 'ir.metrix:reactnative:$bintrayVersion'"
               sed -i "/ir.metrix:reactnative/c\ $newLine" ./android/build.gradle
-
+      -run:
+            name: push github
+            command: |
               git add --all 
               git commit -m "v$npmVersion" 
               git push origin master -f 
