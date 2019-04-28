@@ -31,6 +31,8 @@ jobs:
             name: push github
             command: |
               git add --all 
+              git config --local user.name "metrixCI"
+              git config --local user.email "admin@metrix.ir"
               git commit -m "v$npmVersion" 
               git push origin master -f 
               git tag v$npmVersion
