@@ -21,10 +21,10 @@ jobs:
               androidCode=$(cat version | grep "androidCode=" | cut -d'"' -f2)
               androidVersion=$(cat version | grep "androidVersion=" | cut -d'"' -f2)
               npmVersion=$(cat version | grep "npmVersion=" | cut -d'"' -f2)
-              sed -i '' 's/\"version\".*/\"version\" :\"'"$npmVersion"'\",/' package.json
-              sed -i '' 's/Metrix.initialize.*/Metrix.initialize(appKey, \"'"$npmVersion"'\");/' ./src/metrix-util.js
-              sed -i '' 's/versionCode.*/versionCode '"$androidCode"'/' ./android/build.gradle 
-              sed -i '' 's/versionName.*/versionName \"'"$androidVersion"'\"/' ./android/build.gradle 
+              sed -i  '/version/c\ \"version\" :\"$npmVersion\",' package.json
+              sed -i  '/Metrix.initialize./c\ Metrix.initialize(appKey, \"$npmVersion\");' ./src/metrix-util.js
+              sed -i  '/versionCode/c\ versionCode $androidCode' ./android/build.gradle 
+              sed -i  '/versionName/c\ versionName \"$androidVersion\"' ./android/build.gradle 
               newLine="   implementation 'ir.metrix:reactnative:$bintrayVersion'"
               sed -i "/ir.metrix:reactnative/c\ $newLine" ./android/build.gradle
       - run:
