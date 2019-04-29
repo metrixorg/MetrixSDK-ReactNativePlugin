@@ -28,16 +28,22 @@ jobs:
               newLine="   implementation 'ir.metrix:reactnative:$bintrayVersion'"
               sed -i "/ir.metrix:reactnative/c\ $newLine" ./android/build.gradle
               git add --all 
-              git config --local user.name "metrixCI"
+              git config --local user.name "metrixir"
               git config --local user.email "admin@metrix.ir"
               git commit -m "v$npmVersion" 
               git push origin master -f 
               git tag v$npmVersion
               git push origin v$npmVersion 
+              git clone git@github.com:metrixorg/MetrixSDK-ReactNativeSample.git
+              cd MetrixSDK-ReactNativeSample
+              sed -i  "/@metrixorg/react-native-metrix/c\ \"@metrixorg/react-native-metrix\" :\"$npmVersion\"," package.json
+              git add --all 
+              git config --local user.name "metrixir"
+              git config --local user.email "admin@metrix.ir"
+              git commit -m "use module v$npmVersion" 
+              git push origin master -f 
               
-
-
-
+              
 
 
 
