@@ -37,7 +37,7 @@ jobs:
               cd ..
               git clone git@github.com:metrixorg/MetrixSDK-ReactNativeSample.git
               cd MetrixSDK-ReactNativeSample
-              sed -i  '/@metrixorg/react-native-metrix/c\ \"@metrixorg/react-native-metrix\" :\"$npmVersion\",' package.json
+              sed -i  '/@metrixorg\/react-native-metrix/c\ \"@metrixorg\/react-native-metrix\" :\"$npmVersion\",' package.json
               git add --all 
               git config --local user.name "metrixir"
               git config --local user.email "admin@metrix.ir"
