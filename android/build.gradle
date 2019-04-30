@@ -1,12 +1,5 @@
 apply plugin: 'com.android.library'
 
-   repositories {
-        google()
-        jcenter()
-        maven {
-            url 'https://dl.bintray.com/metrixorg/maven'
-        }
-    }
 
 android {
     compileSdkVersion 28
@@ -15,8 +8,8 @@ android {
     defaultConfig {
         minSdkVersion 16
         targetSdkVersion 28
-        versionCode 14
-        versionName "0.9.1"
+        versionCode 13
+        versionName "0.9.0"
     }
 
     buildTypes {
@@ -29,6 +22,13 @@ android {
 
 dependencies {
     implementation 'com.facebook.react:react-native:+'
+
+    implementation files('libs/metrix.jar')
+    implementation 'com.google.code.gson:gson:2.8.5'
+    implementation 'com.squareup.retrofit2:retrofit:2.5.0'
+    implementation 'com.squareup.retrofit2:converter-gson:2.5.0'
+    implementation 'com.squareup.okhttp3:logging-interceptor:3.12.1'
+    implementation 'com.squareup.retrofit2:converter-scalars:2.5.0'
 
     implementation 'com.android.installreferrer:installreferrer:1.0'
     implementation 'com.google.android.gms:play-services-analytics:16.0.7'
