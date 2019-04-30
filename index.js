@@ -13,7 +13,7 @@ module.exports = {
 	setLogLevel: MetrixUtil.setLogLevel,
 	setFlushEventsOnClose: MetrixUtil.setFlushEventsOnClose,
 	newEvent: MetrixUtil.newEvent,
-	newBusinessEvent: MetrixUtil.newBusinessEvent,
+	newRevenue: MetrixUtil.newRevenue,
 	screenDisplayed: MetrixUtil.screenDisplayed,
 	setScreenFlowsAutoFill: MetrixUtil.setScreenFlowsAutoFill,
 	setMetrixApiKey: MetrixUtil.setMetrixApiKey,
