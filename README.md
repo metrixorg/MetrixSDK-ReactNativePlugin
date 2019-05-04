@@ -1,3 +1,4 @@
+
 ## MetrixSDK React Native Doc [![npm version](https://badge.fury.io/js/%40metrixorg%2Freact-native-metrix.svg)](https://badge.fury.io/js/%40metrixorg%2Freact-native-metrix)
 <div dir="rtl">
 
@@ -20,11 +21,12 @@
 <a style="padding-right:2em" href=#setFlushEventsOnClose>۴.۱۰. ارسال همه‌ی رویدادها</a><br>
 <a style="padding-right:2em" href=#getSessionNum>۴.۱۱. شماره نشست جاری</a><br>
 <a style="padding-right:2em" href=#newEvent>۴.۱۲. رویداد سفارشی</a><br>
-<a style="padding-right:2em" href=#setUserAttributes>۴.۱۳. مشخص کردن Attribute‌های پیش‌فرض همه‌ی رویدادها</a><br>
-<a style="padding-right:2em" href=#setUserMetrics>۴.۱۴. مشخص کردن Metric‌های پیش‌فرض همه‌ی رویدادها</a><br>
-<a style="padding-right:2em" href=#setScreenFlowsAutoFill>۴.۱۵. نگهداری حرکات کاربر در صفحات مختلف در اپلیکیشن</a><br>
-<a style="padding-right:2em" href=#setAttributionListener>۴.۱۶. دریافت اطلاعات کمپین</a><br>
-<a style="padding-right:2em" href=#setDefaultTracker>۴.۱۷. مشخص کردن Pre-installed Tracker</a><br>
+<a style="padding-right:2em" href=#newRevenue>۴.۱۳. رویداد درآمدی</a><br>
+<a style="padding-right:2em" href=#setUserAttributes>۴.۱۴. مشخص کردن Attribute‌های پیش‌فرض همه‌ی رویدادها</a><br>
+<a style="padding-right:2em" href=#setUserMetrics>۴.۱۵. مشخص کردن Metric‌های پیش‌فرض همه‌ی رویدادها</a><br>
+<a style="padding-right:2em" href=#setScreenFlowsAutoFill>۴.۱۶. نگهداری حرکات کاربر در صفحات مختلف در اپلیکیشن</a><br>
+<a style="padding-right:2em" href=#setAttributionListener>۴.۱۷. دریافت اطلاعات کمپین</a><br>
+<a style="padding-right:2em" href=#setDefaultTracker>۴.۱۸. مشخص کردن Pre-installed Tracker</a><br>
 
 
 
@@ -292,15 +294,31 @@
 ورودی‌های متد newEvent بدین شرح هستند:<br>
 - <b>ورودی اول:</b> نامک رویداد مورد نظر شما که از جنس String است و آن را از داشبورد متریکس دریافت می‌کنید.<br>
 - <b>ورودی دوم:</b> یک `Map<String, String>` که ویژگی‌های یک رویداد را مشخص می‌کند.<br>
-- <b>ورودی سوم:</b> یک `Map<String, Object> ` که شامل ویژگی‌های قابل اندازه گیری هستند. مقادیر پشتیبانی شده در کتابخانه متریکس یکی از مقادیر <br>زیر است:
-    1. Integer
-    2. Float
-    3. Double 
-    4. Long
-    5. Sting
-    6. Boolean
+- <b>ورودی سوم:</b> یک `Map<String, Double>` که شامل ویژگی های قابل اندازه گیری است.<br>
 
-<h3 id=setUserAttributes>۱۳. مشخص کردن Attribute‌های پیش‌فرض همه‌ی رویدادها</h3>
+<h3 id=newRevenue>۱۳. ساختن رویداد درآمدی</h3>
+با استفاده از این تابع می‌توانید یک رویداد درآمدی بسازید. برای این کار شما در ابتدا باید در داشبورد متریکس از قسمت مدیریت رخدادها، رخداد موردنظر خود را ثبت کنید و نامک (slug) آن را بعنوان نام رخداد در sdk استفاده کنید.<br>
+این تابع را به صورت زیر می‌توانید صدا بزنید:<br>
+۱. یک رویداد سفارشی که فقط یک نامک مشخص دارد و آن را از داشبورد متریکس میگیرد، بسازید:<br>
+
+<div dir=ltr>
+
+    Metrix.newRevenue(“my_event_slug", 12000, 0, "2");
+</div>
+
+ورودی اول همان نامکی است که از داشبورد دریافت می‌کنید.<br>
+دومین وروی تابع یک مقدار است که همان مقدار درآمد است.<br>
+سومین ورودی واحد پول این رخداد است که در صورت قرار ندادن مقدار آن واحد پیشفرض ریال است در زیر مقادیر آن را میتوانید ببینید.<br>
+۱- `0` ریال  
+  
+۲- `1` دلار  
+  
+۳- `2` یورو  
+
+ورودی چهارم که به صورت دلخواه است میتواند اولویت درآمدی شما باشد.<br>
+<br>
+
+<h3 id=setUserAttributes>۱۴. مشخص کردن Attribute‌های پیش‌فرض همه‌ی رویدادها</h3>
 
 با استفاده از این تابع می‌توانید به تعداد دلخواه `Attribute` به همه‌ی رویدادهای خود اضافه کنید:<br>
 <div dir=ltr>
@@ -311,7 +329,7 @@
     Metrix.addUserAttributes(attributes);
 </div>
 
-<h3 id=setUserMetrics>۱۴. مشخص کردن Metric‌های پیش‌فرض همه‌ی رویدادها</h3>
+<h3 id=setUserMetrics>۱۵. مشخص کردن Metric‌های پیش‌فرض همه‌ی رویدادها</h3>
 
 با استفاده از این تابع می‌توانید به تعداد دلخواه `Metric` به همه‌ی رویدادهای خود اضافه کنید:<br>
 <div dir=ltr>
@@ -322,7 +340,7 @@
     Metrix.setUserMetrics(metrics);
 </div>
 
-<h3 id=setScreenFlowsAutoFill>۱۵. نگهداری حرکات کاربر در صفحات مختلف در اپلیکیشن</h3>
+<h3 id=setScreenFlowsAutoFill>۱۶. نگهداری حرکات کاربر در صفحات مختلف در اپلیکیشن</h3>
 
 با اضافه کردن تابع زیر به `constructor` صفحات خود میتوانید از حرکت کاربر بین صفحات اطلاع پیدا کنید:<br>
 <div dir=ltr>
@@ -331,7 +349,7 @@
 </div>
 
   
-<h3 id=setAttributionListener>۱۶. دریافت اطلاعات کمپین</h3>  
+<h3 id=setAttributionListener>۱۷. دریافت اطلاعات کمپین</h3>  
   
 با مقداردهی این تابعه میتوانید اطلاعات کمپین تبلیغاتی که در ترکر خود در پنل قرار داده اید را دریافت کنید.<br>  
 <div dir=ltr>  
@@ -364,7 +382,7 @@
   
 ۴- `UNKNOWN` حالت ناشناخته
 
-<h3 id=setDefaultTracker>۱۷. مشخص کردن Pre-installed Tracker</h3>
+<h3 id=setDefaultTracker>۱۸. مشخص کردن Pre-installed Tracker</h3>
 
 با استفاده از این تابع می‌توانید با استفاده از یک `trackerToken` که از پنل آن را دریافت می‌کنید، برای همه‌ی رویدادها یک `tracker` پیش‌فرض را قرار دهید:<br>
 <div dir=ltr>
