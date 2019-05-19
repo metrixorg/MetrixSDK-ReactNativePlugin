@@ -55,7 +55,7 @@
 
 ۴. در قسمت `project navigatior` پروژه خود را انتخاب کنید در تب `Build Phases` بخش `Link Binary with Libraries` باید `libRCTMetrixReactNative.a` و ` add other ➜ [your projct's path]/MetrixSdk.framewrok` اضافه نمایید.
 
-۵. در تب `General` ← `Embeded Binaries` ← `+` باید فایل `MetrixSdk.framework` را اضافه نماید.
+۵. در تب `Embeded Binaries` ← `General` ← `+` باید فایل `MetrixSdk.framework` را اضافه نماید.
 
 
 #### Android
