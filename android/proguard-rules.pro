@@ -6,10 +6,9 @@
 
 -keepclassmembers enum * { *; }
 -keep class **.R$* { *; }
--keep interface ir.metrix.sdk.NoProguard
--keep class * implements ir.metrix.sdk.NoProguard { *; }
--keep interface * extends ir.metrix.sdk.NoProguard { *; }
--keep class ir.metrix.sdk.network.model.** { *; }
+
+#Metrix
+-keep class ir.metrix.sdk.** { *; }
 
 # retrofit
 # Retain service method parameters when optimizing.
