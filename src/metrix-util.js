@@ -4,7 +4,7 @@ import { Platform } from "react-native";
 if (Platform.OS === "android") {
 	module.exports = {
 		initialize: function(appKey) {
-			Metrix.initialize(appKey, "0.9.4");
+			Metrix.initialize(appKey, "0.11.0");
 		},
 		enableLocationListening: function() {
 			Metrix.enableLocationListening();
@@ -20,6 +20,9 @@ if (Platform.OS === "android") {
 		},
 		setEventMaxCount: function(eventMaxCount) {
 			Metrix.setEventMaxCount(eventMaxCount);
+		},
+		setAppSecret: function(secretId, info1, info2, info3, info4) {
+			Metrix.setAppSecret(secretId, info1, info2, info3, info4);
 		},
 		setEventUploadPeriodMillis: function(eventUploadPeriodMillis) {
 			Metrix.setEventUploadPeriodMillis(eventUploadPeriodMillis);

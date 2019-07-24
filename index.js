@@ -22,5 +22,6 @@ module.exports = {
 	isScreenFlowsAutoFill: MetrixUtil.isScreenFlowsAutoFill,
 	addUserAttributes: MetrixUtil.addUserAttributes,
 	setUserMetrics: MetrixUtil.setUserMetrics,
+	setAppSecret: MetrixUtil.setAppSecret,
 	setOnAttributionChangedListener:MetrixUtil.setOnAttributionChangedListener
 };
