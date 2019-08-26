@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 #import <React/RCTBridgeModule.h>
 #import <MetrixSdk/Metrix.h>
+#import <MetrixSdk/MXCurrency.h>
 #import <MetrixSdk/MXCustomEvent.h>
 #import <React/RCTConvert.h>
 

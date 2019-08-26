@@ -138,7 +138,16 @@ if (Platform.OS === "android") {
 			}
 		},
 		newRevenue: function(slug, revenue, currency, orderId) {
-			// Metrix.newBusinessEvent(itemType, itemId, cartType, transactionNum, amount);
+			let cr = null;
+			if (currency === 0) { 
+				cr = "IRR";
+			} else if(currency === 1) {
+				cr = "USD";
+			} else if (currency == 2) {
+				cr = "EUR";
+			}
+			Metrix.trackRevenue(slug, revenue, cr, orderId);
+			
 		},
 		screenDisplayed: function(screenName) {
 			// Metrix.screenDisplayed(screenName);

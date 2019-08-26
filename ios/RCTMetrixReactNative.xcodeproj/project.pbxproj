@@ -7,9 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1116F84C2313B9D40021FDB2 /* MetrixSdk.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1116F84B2313B9D40021FDB2 /* MetrixSdk.framework */; };
 		119AC53C22425EAE00DF11E7 /* RCTMetrixReactNative.m in Sources */ = {isa = PBXBuildFile; fileRef = 119AC53B22425EAE00DF11E7 /* RCTMetrixReactNative.m */; };
 		119AC53D22425EAE00DF11E7 /* RCTMetrixReactNative.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 119AC53A22425EAE00DF11E7 /* RCTMetrixReactNative.h */; };
-		119AC5B6224263CE00DF11E7 /* MetrixSdk.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 119AC5B5224263CD00DF11E7 /* MetrixSdk.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -26,10 +26,10 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		1116F84B2313B9D40021FDB2 /* MetrixSdk.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = MetrixSdk.framework; sourceTree = "<group>"; };
 		119AC53722425EAE00DF11E7 /* libRCTMetrixReactNative.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libRCTMetrixReactNative.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		119AC53A22425EAE00DF11E7 /* RCTMetrixReactNative.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RCTMetrixReactNative.h; sourceTree = "<group>"; };
 		119AC53B22425EAE00DF11E7 /* RCTMetrixReactNative.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RCTMetrixReactNative.m; sourceTree = "<group>"; };
-		119AC5B5224263CD00DF11E7 /* MetrixSdk.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = MetrixSdk.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -37,7 +37,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				119AC5B6224263CE00DF11E7 /* MetrixSdk.framework in Frameworks */,
+				1116F84C2313B9D40021FDB2 /* MetrixSdk.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -73,7 +73,7 @@
 		119AC5B4224263CD00DF11E7 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				119AC5B5224263CD00DF11E7 /* MetrixSdk.framework */,
+				1116F84B2313B9D40021FDB2 /* MetrixSdk.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";

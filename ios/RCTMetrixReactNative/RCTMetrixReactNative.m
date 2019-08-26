@@ -32,7 +32,20 @@ RCT_EXPORT_METHOD(newEvent : (NSString *)slug) {
     [self newEventCustom:slug attributes:nil metrics:nil];
 }
 
+RCT_EXPORT_METHOD(trackRevenue : (NSString *)slug  withValue:(NSNumber *)value currency:(NSString *)currency orderId:(NSString *)orderId) {
+    
+    MXCurrency cur = IRR;
+    
+    if ([currency isEqualToString: @"IRR"]) {
+        cur = IRR;
+    } else if([currency isEqualToString: @"USD"]) {
+        cur = USD;
+    }else if([currency isEqualToString: @"EUR"]) {
+        cur = EUR;
+    }
+    
+    [Metrix trackRevenue:slug withValue:value currency: orderId:orderId];
+    
+  }
 
 @end
-
-
