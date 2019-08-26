@@ -23,5 +23,6 @@ module.exports = {
 	addUserAttributes: MetrixUtil.addUserAttributes,
 	setUserMetrics: MetrixUtil.setUserMetrics,
 	setAppSecret: MetrixUtil.setAppSecret,
+	setStore: MetrixUtil.setStore,
 	setOnAttributionChangedListener:MetrixUtil.setOnAttributionChangedListener
 };

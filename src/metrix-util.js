@@ -75,6 +75,9 @@ if (Platform.OS === "android") {
 		setMetrixApiKey: function(newApiKey) {
 			Metrix.setMetrixApiKey(newApiKey);
 		},
+		setStore: function(store) {
+			Metrix.setStore(store);
+		},
 		setDefaultTracker: function(callback) {
 			Metrix.setDefaultTracker(callback);
 		},
