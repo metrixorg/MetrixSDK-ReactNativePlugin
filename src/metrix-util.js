@@ -3,6 +3,62 @@ import { Platform } from "react-native";
 
 if (Platform.OS === "android") {
   module.exports = {
+    initialize: function(appKey) {
+      Metrix.initialize(appKey, "0.11.0");
+    },
+    enableLocationListening: function() {
+      Metrix.enableLocationListening();
+    },
+    disableLocationListening: function() {
+      Metrix.disableLocationListening();
+    },
+    setEventUploadThreshold: function(eventUploadThreshold) {
+      Metrix.setEventUploadThreshold(eventUploadThreshold);
+    },
+    setEventUploadMaxBatchSize: function(eventUploadMaxBatchSize) {
+      Metrix.setEventUploadMaxBatchSize(eventUploadMaxBatchSize);
+    },
+    setEventMaxCount: function(eventMaxCount) {
+      Metrix.setEventMaxCount(eventMaxCount);
+    },
+    setAppSecret: function(secretId, info1, info2, info3, info4) {
+      Metrix.setAppSecret(secretId, info1, info2, info3, info4);
+    },
+    setEventUploadPeriodMillis: function(eventUploadPeriodMillis) {
+      Metrix.setEventUploadPeriodMillis(eventUploadPeriodMillis);
+    },
+    setSessionTimeoutMillis: function(sessionTimeoutMillis) {
+      Metrix.setSessionTimeoutMillis(sessionTimeoutMillis);
+    },
+    enableLogging: function(enableLogging) {
+      Metrix.enableLogging(enableLogging);
+    },
+    setLogLevel: function(logLevel) {
+      Metrix.setLogLevel(logLevel);
+    },
+    setFlushEventsOnClose: function(flushEventsOnClose) {
+      Metrix.setFlushEventsOnClose(flushEventsOnClose);
+    },
+    setScreenFlowsAutoFill: function(screenFlowsAutoSend) {
+      Metrix.setScreenFlowsAutoFill(screenFlowsAutoSend);
+    },
+    setDefaultTracker: function(callback) {
+      Metrix.setDefaultTracker(callback);
+    },
+    getSessionNum: function(callback) {
+      Metrix.getSessionNum(callback);
+    },
+    isScreenFlowsAutoFill: function(callback) {
+      Metrix.isScreenFlowsAutoFill(callback);
+    },
+    setUserMetrics: function(userMetrics) {
+      Metrix.addUserMetrics(userMetrics);
+    },
+
+    setOnAttributionChangedListener: function(callback) {
+      Metrix.setOnAttributionChangedListener(callback);
+    },
+
     onCreate: function(metrixConfig) {
       Metrix.onCreate(
         metrixConfig,
