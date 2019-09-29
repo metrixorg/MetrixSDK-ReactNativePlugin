@@ -8,8 +8,8 @@ android {
     defaultConfig {
         minSdkVersion 16
         targetSdkVersion 28
-        versionCode 19
-        versionName "0.12.0"
+        versionCode 20
+        versionName "0.13.0"
     }
 
     buildTypes {
@@ -32,8 +32,7 @@ rootProject.allprojects {
 
 dependencies {
     implementation 'com.facebook.react:react-native:+'
-    implementation 'ir.metrix:reactnative:0.12.0'
-
-implementation 'com.google.android.gms:play-services-analytics:16.0.7'
+    implementation 'ir.metrix:reactnative:0.13.0'
+    implementation 'com.google.android.gms:play-services-analytics:16.0.7'
 
 }
