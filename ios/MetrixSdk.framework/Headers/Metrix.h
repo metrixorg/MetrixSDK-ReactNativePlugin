@@ -8,6 +8,7 @@
 //
 
 #import "MXConfig.h"
+#import "MXCurrency.h"
 
 @class MXCustomEvent;
 
@@ -59,6 +60,12 @@ extern NSString * __nonnull const MXEnvironmentProduction;
  *
  */
 + (void)trackCustomEvent:(MXCustomEvent *)event;
+
+/**
+ * @brief Tell Metrix that a particular revenue event has happened.
+ *
+ */
++ (void)trackRevenue:(NSString *)slug withValue:(NSNumber *)value currency:(MXCurrency)currency orderId:(NSString *)orderId;
 
 /**
  * @brief Tell Metrix that a particular event has happened.
@@ -128,6 +135,8 @@ extern NSString * __nonnull const MXEnvironmentProduction;
 - (void)appDidLaunch:(nullable MXConfig *)metrixConfig;
 
 - (void)trackCustomEvent:(nullable MXCustomEvent *)event;
+
+- (void)trackRevenue:(NSString *)slug withValue:(NSNumber *)value currency:(MXCurrency)currency orderId:(NSString *)orderId;
 
 - (void)trackScreen:(NSString *)screenName;
 
