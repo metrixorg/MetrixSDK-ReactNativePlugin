@@ -113,6 +113,10 @@ if (Platform.OS === "android") {
   };
 } else if (Platform.OS === "ios") {
 	module.exports = {
+
+    onCreate: function(metrixConfig) {
+      Metrix.initialize(metrixConfig.appId);
+    },
 		initialize: function(appKey) {
 			Metrix.initialize(appKey);
 		},
