@@ -44,7 +44,7 @@ RCT_EXPORT_METHOD(trackRevenue : (NSString *)slug  withValue:(NSNumber *)value c
         cur = EUR;
     }
     
-    [Metrix trackRevenue:slug withValue:value currency: orderId:orderId];
+    [Metrix trackRevenue:slug withValue:value currency:cur orderId:orderId];
     
   }
 
