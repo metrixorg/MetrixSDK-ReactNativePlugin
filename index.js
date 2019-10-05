@@ -101,6 +101,18 @@ MetrixConfig.prototype.setOnDeeplinkResponseListener = function(
   this.onDeeplinkResponseListener = onDeeplinkResponseListener;
 };
 
+MetrixConfig.prototype.setOnSessionIdListener = function(
+  onSessionIdListener
+) {
+  this.onSessionIdListener = onSessionIdListener;
+};
+
+MetrixConfig.prototype.setOnReceiveUserIdListener = function(
+  onReceiveUserIdListener
+) {
+  this.onReceiveUserIdListener = onReceiveUserIdListener;
+};
+
 
 module.exports = { Metrix, MetrixConfig,
 	initialize: MetrixUtil.initialize,
