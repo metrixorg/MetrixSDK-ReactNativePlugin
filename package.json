@@ -7,6 +7,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "deploy": "git checkout master && git pull && git merge develop",
     "major": "npm version major",
+    "minor": "npm version minor",
     "patch": "npm version patch",
     "publish": "npm publish"
     
