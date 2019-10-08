@@ -61,21 +61,8 @@ if (Platform.OS === "android") {
 
     onCreate: function(metrixConfig) {
       Metrix.onCreate(
-        metrixConfig,
-        metrixConfig.shouldLunchDeeplink,
-        metrixConfig.onAttributionChangeListener
-          ? metrixConfig.onAttributionChangeListener
-          : function(e) {},
-        metrixConfig.onDeeplinkResponseListener
-          ? metrixConfig.onDeeplinkResponseListener
-          : function(e) {},
-        metrixConfig.onReceiveUserIdListener
-          ? metrixConfig.onReceiveUserIdListener
-          : function(e) {},
-        metrixConfig.onSessionIdListener
-          ? metrixConfig.onSessionIdListener
-          : function(e) {}
-      );
+        metrixConfig.settings,
+        metrixConfig.settings.shouldLunchDeeplink);
     },
     appWillOpenUrl: function(uri) {
       Metrix.appWillOpenUrl(uri);
