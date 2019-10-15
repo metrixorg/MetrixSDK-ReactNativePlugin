@@ -108,7 +108,7 @@ if (Platform.OS === "android") {
 	module.exports = {
 
     onCreate: function(metrixConfig) {
-      Metrix.initialize(metrixConfig.appId);
+      Metrix.initialize(metrixConfig.settings.appId);
     },
 		initialize: function(appKey) {
 			Metrix.initialize(appKey);
