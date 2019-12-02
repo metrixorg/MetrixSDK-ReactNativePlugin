@@ -4,7 +4,7 @@ import { Platform } from "react-native";
 if (Platform.OS === "android") {
   module.exports = {
     initialize: function(appKey) {
-      Metrix.initialize(appKey, "0.13.0");
+      Metrix.initialize(appKey, "0.14.1");
     },
     enableLocationListening: function() {
       Metrix.enableLocationListening();
