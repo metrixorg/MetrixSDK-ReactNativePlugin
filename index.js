@@ -1,5 +1,5 @@
 let MetrixUtil = require('./src/metrix-util.js');
-import {DeviceEventEmitter} from 'react-native';
+import { NativeEventEmitter, NativeModules } from 'react-native';
 
 var Metrix = {};
 Metrix.onCreate = MetrixUtil.onCreate;
@@ -18,7 +18,8 @@ var MetrixConfig = function(appId) {
   this.onDeeplinkResponseListener = function(e) {};
   this.onReceiveUserIdListener = function(e) {};
   this.onSessionIdListener = function(e) {};
-
+  const DeviceEventEmitter = new NativeEventEmitter(NativeModules.MetrixReactNative);
+    
   DeviceEventEmitter.addListener('onAttributionChangeListener', val => {
     this.onAttributionChangeListener(val);
   });

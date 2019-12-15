@@ -16,9 +16,9 @@ RCT_EXPORT_MODULE();
 {
   return @[@"onAttributionChangeListener",@"onReceiveUserIdListener"];
 }
-RCT_EXPORT_METHOD(onCreate : (NSDictionary *)metrixConfig) {
+RCT_EXPORT_METHOD(onCreate : (NSDictionary *)metrixDict) {
     
-    MXConfig *metrixConfig = [MXConfig configWithAppId:metrixConfig[@"appId"]
+    MXConfig *metrixConfig = [MXConfig configWithAppId:metrixDict[@"appId"]
                                            environment:MXEnvironmentProduction];
 
     [metrixConfig setDelegate:self];
