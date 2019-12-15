@@ -12,13 +12,39 @@
 
 RCT_EXPORT_MODULE();
 
-RCT_EXPORT_METHOD(initialize : (NSString *)appKey) {
+- (NSArray<NSString *> *)supportedEvents
+{
+  return @[@"onAttributionChangeListener",@"onReceiveUserIdListener"];
+}
+RCT_EXPORT_METHOD(onCreate : (NSDictionary *)metrixConfig) {
     
-    MXConfig *metrixConfig = [MXConfig configWithAppId:appKey
+    MXConfig *metrixConfig = [MXConfig configWithAppId:metrixConfig[@"appId"]
                                            environment:MXEnvironmentProduction];
-    
+
+    [metrixConfig setDelegate:self];
     [Metrix appDidLaunch:metrixConfig];
 }
+
+RCT_EXPORT_METHOD(initialize : (NSString *)appId) {
+    
+    MXConfig *metrixConfig = [MXConfig configWithAppId:appId
+                                           environment:MXEnvironmentProduction];
+    [Metrix appDidLaunch:metrixConfig];
+}
+
+
+- (void)metrixSessionTrackingSucceeded:(MXSessionSuccess *)sessionSuccessResponseData {
+     [self sendEventWithName:@"onReceiveUserIdListener" body:[sessionSuccessResponseData mxid]];
+}
+
+
+- (void)metrixAttributionChanged:(MXAttribution *)attribution {
+    
+     [self sendEventWithName:@"onAttributionChangeListener" body:[attribution dictionary]];
+}
+
+
+
 
 RCT_EXPORT_METHOD(newEventCustom : (NSString *)slug  attributes:(NSDictionary *)myAttributes metrics:(NSDictionary *)myMetrics) {
     

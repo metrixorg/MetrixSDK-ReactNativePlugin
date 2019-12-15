@@ -12,7 +12,8 @@
 #import <MetrixSdk/MXCurrency.h>
 #import <MetrixSdk/MXCustomEvent.h>
 #import <React/RCTConvert.h>
+#import <React/RCTEventEmitter.h>
 
-@interface RCTMetrixReactNative : NSObject <RCTBridgeModule>
+@interface RCTMetrixReactNative : RCTEventEmitter <RCTBridgeModule>
 
 @end

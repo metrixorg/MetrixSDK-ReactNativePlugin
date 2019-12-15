@@ -74,6 +74,12 @@ extern NSString * __nonnull const MXEnvironmentProduction;
 + (void)trackScreen:(NSString *)screenName;
 
 /**
+ * @brief request to get attribution info.
+ *
+ */
++ (void)requestAttribution;
+
+/**
  * @brief Enable or disable the metrix SDK. This setting is saved for future sessions.
  *
  * @param enabled The flag to enable or disable the metrix SDK.
@@ -112,6 +118,16 @@ extern NSString * __nonnull const MXEnvironmentProduction;
 + (nullable NSString *)mxid;
 
 /**
+ * @brief Get current attribution for the user.
+ *
+ * @note Attribution information is available only after installation has been successfully tracked
+ *       and attribution information arrived after that from the backend.
+ *
+ * @return Current attribution value for the user.
+ */
++ (nullable MXAttribution *)attribution;
+
+/**
  * @brief Get current Metrix SDK version string.
  *
  * @return Metrix SDK version string (iosX.Y.Z).
@@ -140,6 +156,8 @@ extern NSString * __nonnull const MXEnvironmentProduction;
 
 - (void)trackScreen:(NSString *)screenName;
 
+- (void)requestAttribution;
+
 - (void)setEnabled:(BOOL)enabled;
 
 - (void)teardown;
@@ -153,6 +171,8 @@ extern NSString * __nonnull const MXEnvironmentProduction;
 - (nullable NSString *)mxid;
 
 - (nullable NSString *)idfa;
+
+- (nullable MXAttribution *)attribution;
 
 - (nullable NSString *)sdkVersion;
 
