@@ -1,5 +1,7 @@
-let MetrixUtil = require('./src/metrix-util.js');
-import { NativeEventEmitter, NativeModules } from 'react-native';
+let MetrixUtil = require("./src/metrix-util.js");
+import { NativeEventEmitter } from "react-native";
+import { Platform } from "react-native";
+let Metrixx = require("react-native").NativeModules.MetrixReactNative;
 
 var Metrix = {};
 Metrix.onCreate = MetrixUtil.onCreate;
@@ -18,20 +20,22 @@ var MetrixConfig = function(appId) {
   this.onDeeplinkResponseListener = function(e) {};
   this.onReceiveUserIdListener = function(e) {};
   this.onSessionIdListener = function(e) {};
-  const DeviceEventEmitter = new NativeEventEmitter(NativeModules.MetrixReactNative);
-    
-  DeviceEventEmitter.addListener('onAttributionChangeListener', val => {
+  const DeviceEventEmitter = new NativeEventEmitter(Metrixx);
+
+  DeviceEventEmitter.addListener("onAttributionChangeListener", val => {
     this.onAttributionChangeListener(val);
   });
-  DeviceEventEmitter.addListener('onDeeplinkResponseListener', val => {
-    this.onDeeplinkResponseListener(val);
-  });
-  DeviceEventEmitter.addListener('onReceiveUserIdListener', val => {
+  DeviceEventEmitter.addListener("onReceiveUserIdListener", val => {
     this.onReceiveUserIdListener(val);
   });
-  DeviceEventEmitter.addListener('onSessionIdListener', val => {
-    this.onSessionIdListener(val);
-  });
+  if (Platform.OS === "android") {
+    DeviceEventEmitter.addListener("onSessionIdListener", val => {
+      this.onSessionIdListener(val);
+    });
+    DeviceEventEmitter.addListener("onDeeplinkResponseListener", val => {
+      this.onDeeplinkResponseListener(val);
+    });
+  }
 };
 
 MetrixConfig.prototype.setAppSecret = function(
@@ -39,14 +43,14 @@ MetrixConfig.prototype.setAppSecret = function(
   info1,
   info2,
   info3,
-  info4,
+  info4
 ) {
   this.settings.appSecret = {
     secretId: secretId.toString(),
     info1: info1.toString(),
     info2: info2.toString(),
     info3: info3.toString(),
-    info4: info4.toString(),
+    info4: info4.toString()
   };
 };
 
@@ -59,20 +63,18 @@ MetrixConfig.prototype.setLocationListening = function(locationListening) {
 };
 
 MetrixConfig.prototype.setEventUploadThreshold = function(
-  eventUploadThreshold,
+  eventUploadThreshold
 ) {
   this.settings.eventUploadThreshold = eventUploadThreshold;
 };
 
 MetrixConfig.prototype.setEventUploadMaxBatchSize = function(
-  eventUploadMaxBatchSize,
+  eventUploadMaxBatchSize
 ) {
   this.settings.eventUploadMaxBatchSize = eventUploadMaxBatchSize;
 };
 
-MetrixConfig.prototype.setFirebaseAppId = function(
-  firebaseAppId
-) {
+MetrixConfig.prototype.setFirebaseAppId = function(firebaseAppId) {
   this.settings.firebaseAppId = firebaseAppId;
 };
 
@@ -81,13 +83,13 @@ MetrixConfig.prototype.setEventMaxCount = function(eventMaxCount) {
 };
 
 MetrixConfig.prototype.setEventUploadPeriodMillis = function(
-  eventUploadPeriodMillis,
+  eventUploadPeriodMillis
 ) {
   this.settings.eventUploadPeriodMillis = eventUploadPeriodMillis;
 };
 
 MetrixConfig.prototype.setSessionTimeoutMillis = function(
-  sessionTimeoutMillis,
+  sessionTimeoutMillis
 ) {
   this.settings.sessionTimeoutMillis = sessionTimeoutMillis;
 };
@@ -113,14 +115,14 @@ MetrixConfig.prototype.setStore = function(store) {
 };
 
 MetrixConfig.prototype.setOnAttributionChangeListener = function(
-  onAttributionChangeListener,
+  onAttributionChangeListener
 ) {
   this.settings.onAttributionChangedListener = true;
   this.onAttributionChangeListener = onAttributionChangeListener;
 };
 
 MetrixConfig.prototype.setOnDeeplinkResponseListener = function(
-  onDeeplinkResponseListener,
+  onDeeplinkResponseListener
 ) {
   this.settings.onDeeplinkResponseListener = true;
   this.onDeeplinkResponseListener = onDeeplinkResponseListener;
@@ -132,7 +134,7 @@ MetrixConfig.prototype.setOnSessionIdListener = function(onSessionIdListener) {
 };
 
 MetrixConfig.prototype.setOnReceiveUserIdListener = function(
-  onReceiveUserIdListener,
+  onReceiveUserIdListener
 ) {
   this.settings.onReceiveUserIdListener = true;
   this.onReceiveUserIdListener = onReceiveUserIdListener;
@@ -163,5 +165,5 @@ module.exports = {
   addUserAttributes: MetrixUtil.addUserAttributes,
   setUserMetrics: MetrixUtil.setUserMetrics,
   setAppSecret: MetrixUtil.setAppSecret,
-  setOnAttributionChangedListener: MetrixUtil.setOnAttributionChangedListener,
+  setOnAttributionChangedListener: MetrixUtil.setOnAttributionChangedListener
 };
