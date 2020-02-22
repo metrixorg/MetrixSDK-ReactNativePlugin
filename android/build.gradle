@@ -4,12 +4,12 @@ apply plugin: 'com.android.library'
 android {
     compileSdkVersion 28
     buildToolsVersion "28.0.3"
-    
+
     defaultConfig {
         minSdkVersion 16
         targetSdkVersion 28
         versionCode 23
-        versionName "0.14.2"
+        versionName "0.14.6"
     }
 
     buildTypes {
@@ -32,6 +32,6 @@ rootProject.allprojects {
 
 dependencies {
     implementation 'com.facebook.react:react-native:+'
-    implementation 'ir.metrix:reactnative:0.14.1'
+    implementation 'ir.metrix:reactnative:0.14.6'
 
 }

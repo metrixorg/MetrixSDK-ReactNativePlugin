@@ -4,7 +4,7 @@ import { Platform } from "react-native";
 if (Platform.OS === "android") {
   module.exports = {
     initialize: function(appKey) {
-      Metrix.initialize(appKey, "0.14.2");
+      Metrix.initialize(appKey, "0.14.6");
     },
     enableLocationListening: function() {
       Metrix.enableLocationListening();
@@ -147,13 +147,13 @@ if (Platform.OS === "android") {
 				if (customAttributes && customMetrics) {
 				Metrix.newEventCustom(eventName,customAttributes,customMetrics);
 			}
-			else{	
+			else{
 			Metrix.newEvent(eventName);
 			}
 		},
 		newRevenue: function(slug, revenue, currency, orderId) {
 			let cr = null;
-			if (currency === 0) { 
+			if (currency === 0) {
 				cr = "IRR";
 			} else if(currency === 1) {
 				cr = "USD";
@@ -161,7 +161,7 @@ if (Platform.OS === "android") {
 				cr = "EUR";
 			}
 			Metrix.trackRevenue(slug, revenue, cr, orderId);
-			
+
 		},
 		screenDisplayed: function(screenName) {
 			// Metrix.screenDisplayed(screenName);
