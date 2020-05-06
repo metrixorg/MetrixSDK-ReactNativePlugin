@@ -8,8 +8,7 @@
     "deploy": "git checkout master && git pull && git merge develop",
     "major": "npm version major",
     "minor": "npm version minor",
-    "patch": "npm version patch",
-    "publish": "npm publish"
+    "patch": "npm version patch"
   },
   "author": "Metrix",
   "license": "Apache 2.0",
