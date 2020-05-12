@@ -58,7 +58,7 @@ RCT_EXPORT_METHOD(newEvent : (NSString *)slug) {
     [self newEventCustom:slug attributes:nil metrics:nil];
 }
 
-RCT_EXPORT_METHOD(trackRevenue : (NSString *)slug  withValue:(NSNumber *)value currency:(NSString *)currency orderId:(NSString *)orderId) {
+RCT_EXPORT_METHOD(trackRevenue : (NSString *)slug  withValue:(nonnull NSNumber *)value currency:(NSString *)currency orderId:(NSString *)orderId) {
     
     MXCurrency cur = IRR;
     
