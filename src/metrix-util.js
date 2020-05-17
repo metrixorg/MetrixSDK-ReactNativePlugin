@@ -67,9 +67,9 @@ if (Platform.OS === "android") {
     appWillOpenUrl: function(uri) {
       Metrix.appWillOpenUrl(uri);
     },
-    newEvent: function(eventName, customAttributes, customMetrics) {
-      if (customAttributes && customMetrics) {
-        Metrix.newEventCustom(eventName, customAttributes, customMetrics);
+    newEvent: function(eventName, customAttributes) {
+      if (customAttributes) {
+        Metrix.newEventCustom(eventName, customAttributes);
       } else {
         Metrix.newEvent(eventName);
       }
@@ -97,9 +97,6 @@ if (Platform.OS === "android") {
       Metrix.screenDisplayed(screenName);
     },
 
-    addUserMetrics: function(userMetrics) {
-      Metrix.addUserMetrics(userMetrics);
-    },
     addUserAttributes: function(userAttributes) {
       Metrix.addUserAttributes(userAttributes);
     }
