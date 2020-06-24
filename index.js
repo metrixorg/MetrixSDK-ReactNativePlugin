@@ -74,9 +74,10 @@ MetrixConfig.prototype.setEventUploadMaxBatchSize = function(
   this.settings.eventUploadMaxBatchSize = eventUploadMaxBatchSize;
 };
 
-MetrixConfig.prototype.setFirebaseId = function(firebaseAppId, firebaseProjectId) {
+MetrixConfig.prototype.setFirebaseId = function(firebaseAppId, firebaseProjectId, firebaseApiKey) {
   this.settings.firebaseAppId = firebaseAppId;
   this.settings.firebaseProjectId = firebaseProjectId;
+  this.settings.firebaseApiKey = firebaseApiKey;
 };
 
 MetrixConfig.prototype.setEventMaxCount = function(eventMaxCount) {

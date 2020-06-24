@@ -1,2 +1,4 @@
 /android/local.properties
 /node_modules
+/.idea
+/.circleci
