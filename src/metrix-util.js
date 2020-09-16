@@ -4,7 +4,7 @@ import { Platform } from "react-native";
 if (Platform.OS === "android") {
   module.exports = {
     initialize: function(appKey) {
-      Metrix.initialize(appKey, "0.15.5");
+      Metrix.initialize(appKey, "0.15.6");
     },
     enableLocationListening: function() {
       Metrix.enableLocationListening();
@@ -140,9 +140,9 @@ if (Platform.OS === "android") {
 		setFlushEventsOnClose: function(flushEventsOnClose) {
 			// Metrix.setFlushEventsOnClose(flushEventsOnClose);
 		},
-		newEvent: function(eventName, customAttributes, customMetrics) {
-				if (customAttributes && customMetrics) {
-				Metrix.newEventCustom(eventName,customAttributes,customMetrics);
+		newEvent: function(eventName, customAttributes) {
+				if (customAttributes) {
+				Metrix.newEventCustom(eventName, customAttributes, {});
 			}
 			else{
 			Metrix.newEvent(eventName);
