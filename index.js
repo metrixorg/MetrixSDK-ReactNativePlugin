@@ -22,7 +22,7 @@ var MetrixConfig = function(appId) {
   this.onSessionIdListener = function(e) {};
   const DeviceEventEmitter = new NativeEventEmitter(Metrixx);
 
-  DeviceEventEmitter.addListener("onAttributionChangeListener", val => {
+  DeviceEventEmitter.addListener("onAttributionChangedListener", val => {
     this.onAttributionChangeListener(val);
   });
   DeviceEventEmitter.addListener("onReceiveUserIdListener", val => {
@@ -116,7 +116,7 @@ MetrixConfig.prototype.setStore = function(store) {
   this.settings.store = store;
 };
 
-MetrixConfig.prototype.setOnAttributionChangeListener = function(
+MetrixConfig.prototype.setOnAttributionChangedListener = function(
   onAttributionChangeListener
 ) {
   this.settings.onAttributionChangedListener = true;
