@@ -14,7 +14,7 @@ RCT_EXPORT_MODULE();
 
 - (NSArray<NSString *> *)supportedEvents
 {
-  return @[@"onAttributionChangeListener",@"onReceiveUserIdListener"];
+  return @[@"onAttributionChangedListener",@"onReceiveUserIdListener"];
 }
 RCT_EXPORT_METHOD(onCreate : (NSDictionary *)metrixDict) {
     
@@ -40,7 +40,7 @@ RCT_EXPORT_METHOD(initialize : (NSString *)appId) {
 
 - (void)metrixAttributionChanged:(MXAttribution *)attribution {
     
-     [self sendEventWithName:@"onAttributionChangeListener" body:[attribution dictionary]];
+     [self sendEventWithName:@"onAttributionChangedListener" body:[attribution dictionary]];
 }
 
 
